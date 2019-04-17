@@ -1,0 +1,29 @@
+@font-face {
+	font-family: "Inconsolata";
+	src: local(Inconsolata) url(/assets/ttf/inconsolata-regular.ttf) format("ttf");
+}
+
+body {
+	font-family: "Inconsolata", monospace;
+	background: #f0f0f0;
+}
+
+main {
+	position: relative;
+	max-height: 100vh;
+	max-width: 100%;
+	top: 0;
+	left: 0;
+	text-align: center;
+}
+
+img {
+	width: 300px;
+	height: auto;
+}
+
+h1 {
+	font-weight: normal;
+	font-size: 48px;
+	color: #999;
+}
