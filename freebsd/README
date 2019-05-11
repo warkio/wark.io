@@ -1,0 +1,34 @@
+wark.io - Setting up under FreeBSD
+==================================
+
+In a root shell:
+
+   # By default, the service assumes it's gonna be ran
+   # as the `wark' user.
+   adduser wark
+
+   # Install the service.
+   cp rc.d/warkio /usr/local/etc/rc.d/
+
+   # Create the directory for the PID file.
+   mkdir /var/run/wark
+
+   # Clone the repository into the directory defined in the
+   # `warkio_chdir' variable.
+   su - wark
+   mkdir services
+   cd services
+   git clone https://github.com/warkio/wark.io warkio
+
+   # Setup the Python virtual environment.
+   cd warkio/
+   python -m venv venv
+   . ./venv/bin/activate
+   pip install -r requirements.txt
+
+After that, add `warkio_enable="YES"' to `/etc/rc.conf' and run `service warkio start'.
+
+You might want to add these lines to your syslogd settings:
+
+   !warkio
+   *.* /var/log/warkio.log
