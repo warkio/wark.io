@@ -18,6 +18,6 @@ load_rc_config $name
 : "${warkio_chdir:="/usr/home/${warkio_user}/services/${name}"}"
 : "${warkio_enable:="NO"}"
 
-command_args="-S -P ${pidfile} -T ${name} ${warkio_chdir}/freebsd/bin/warkio-start"
+command_args="-S -P ${pidfile} -T ${name} -r ${warkio_chdir}/freebsd/bin/warkio-start"
 
 run_rc_command "$1"
