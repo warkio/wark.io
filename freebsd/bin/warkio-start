@@ -1,9 +1,0 @@
-#!/bin/sh
-
-. ./venv/bin/activate
-
-export WARK_PRODUCTION='1'
-export WARK_BIND_HOSTNAME='0.0.0.0'
-export WARK_BIND_PORT='21101'
-
-exec python src/wark/
